@@ -6,7 +6,7 @@
   "description": "Offline Library - Kitoblaringizni boshqaring",
   "scripts": {
     "dev": "vite",
-    "build": "npm install -g vite && vite build",
+    "build": "npx vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js",
@@ -36,6 +36,6 @@
     "globals": "^16.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.17",
-    "vite": "^7.1.7"
+    "vite": "^7.2.2"
   }
 }
