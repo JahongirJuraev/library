@@ -6,11 +6,11 @@
   "description": "Offline Library - Kitoblaringizni boshqaring",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm install -g vite && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js",
-    "start": "concurrently \"npm run dev\" \"npm run server\""
+    "start": "npm run build && node server.js"
   },
   "dependencies": {
     "axios": "^1.13.2",
