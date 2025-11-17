@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "npx vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
+    "start": "node server.js",
     "server": "node server.js",
-    "start": "npm run build && node server.js"
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "axios": "^1.13.2",
