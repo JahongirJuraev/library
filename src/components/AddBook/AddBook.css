@@ -1,0 +1,357 @@
+/* ============================================
+   MODAL OVERLAY
+   ============================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  /* padding: 1rem; */
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================
+   MODAL CONTENT
+   ============================================ */
+.modal-content.add-book-modal {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MODAL CLOSE BUTTON
+   ============================================ */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--overlay-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+  background-color: var(--error);
+  color: white;
+  transform: rotate(90deg);
+  border-color: var(--error);
+}
+
+.modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================
+   MODAL TITLE
+   ============================================ */
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+.addbook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ============================================
+   FORM ROW (2 columns)
+   ============================================ */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ============================================
+   FORM GROUP
+   ============================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required {
+  color: var(--error);
+  font-weight: 700;
+}
+
+/* Input override for this modal - BIRHIL STIL */
+.addbook-form input[type="text"],
+.addbook-form input[type="file"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.addbook-form input[type="text"]:focus,
+.addbook-form input[type="file"]:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  background-color: var(--bg-secondary);
+}
+
+.addbook-form input[type="text"]:hover,
+.addbook-form input[type="file"]:hover {
+  border-color: var(--border-hover);
+}
+
+.addbook-form input[type="text"]::placeholder {
+  color: var(--text-tertiary);
+}
+
+/* File input custom */
+.addbook-form input[type="file"] {
+  cursor: pointer;
+  padding: 10px 12px;
+}
+
+.addbook-form input[type="file"]::file-selector-button {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: background-color var(--transition-fast);
+}
+
+.addbook-form input[type="file"]::file-selector-button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ============================================
+   FILE INFO
+   ============================================ */
+.file-info {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0.5rem;
+  background-color: var(--overlay-bg);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-primary);
+}
+
+/* ============================================
+   COVER PREVIEW
+   ============================================ */
+.cover-preview {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cover-preview img {
+  max-width: 200px;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-remove-cover {
+  background-color: var(--error);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-remove-cover:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.btn-remove-cover:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================
+   FORM ACTIONS (Buttons)
+   ============================================ */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.form-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+/* ============================================
+   SCROLLBAR (Modal ichida)
+   ============================================ */
+.modal-content.add-book-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content.add-book-modal::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+.modal-content.add-book-modal::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 10px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .modal-content.add-book-modal {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .addbook-form {
+    gap: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .modal-content.add-book-modal {
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .cover-preview img {
+    max-width: 150px;
+    max-height: 200px;
+  }
+}

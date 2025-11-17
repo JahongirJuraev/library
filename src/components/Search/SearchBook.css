@@ -1,0 +1,31 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  /* font-size: 34px; */
+  height: 30px;
+  margin: 30px auto;
+  backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.search-input:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  border-radius: 10px;
+  flex: 1;
+  /* background: transparent; */
+  border: solid 1px rgba(79, 79, 79, 0.629);
+  padding: 10px;
+  color: #000000;
+  font-size: 18px;
+  font-family: "ITC Avant Garde Gothic", sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.search-bar input::placeholder {
+  color: rgb(0, 0, 0);
+}
