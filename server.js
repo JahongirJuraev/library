@@ -161,10 +161,7 @@ app.post("/books", upload.fields([
   }
 });
 
-/**
- * DELETE /books/:id
- * Delete book (file + metadata)
- */
+
 app.delete("/books/:id", (req, res) => {
   try {
     const { id } = req.params;
@@ -222,10 +219,6 @@ app.delete("/books/:id", (req, res) => {
   }
 });
 
-/**
- * GET /favorites
- * Get all favorites
- */
 app.get("/favorites", (req, res) => {
   try {
     const favorites = JSON.parse(fs.readFileSync(FAVORITES_FILE, 'utf-8'));
